@@ -1,5 +1,6 @@
 require 'redcarpet'
 require 'pygments'
+require 'nokogiri'
 
 module Forem
   module Formatters

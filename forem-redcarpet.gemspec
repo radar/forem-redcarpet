@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
 
+  s.add_dependency 'nokogiri'
   s.add_dependency 'redcarpet', '2.0.1'
   s.add_dependency 'pygments.rb', '0.2.4'
 end
