@@ -1,7 +1,3 @@
-# Fork to fix a bug
-
-The bug was an exception due to a missing require statement.  This fork adds the missing require statement and also adds the Gem dependency for nokogiri.
-
 # Forem + Redcarpet = :heart:
 
 Simply specify this gem as a dependency of your application that also contains Forem:
