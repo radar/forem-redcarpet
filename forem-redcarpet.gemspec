@@ -8,11 +8,12 @@ Gem::Specification.new do |s|
   s.email       = ["radarlistener@gmail.com"]
   s.homepage    = ""
   s.summary     = %q{Provides Redcarpet markup (with syntax highlighting by pygments.rb) for Forem posts}
-  s.description = %q{Provides Recarpet markup (with syntax highlighting by pygments.rb) for Forem posts}
+  s.description = %q{This is a fork of the original code to provide a fix for an exception due to a missing require statement.  Provides Recarpet markup (with syntax highlighting by pygments.rb) for Forem posts}
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
 
+  s.add_dependency 'nokogiri'
   s.add_dependency 'redcarpet', '2.0.1'
   s.add_dependency 'pygments.rb', '0.2.4'
 end
