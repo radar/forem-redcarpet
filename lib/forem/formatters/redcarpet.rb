@@ -1,6 +1,5 @@
 require 'redcarpet'
 require 'pygments'
-# AJF: The following line is new in this fork to fix an exception from line on line 22 of this file
 require 'nokogiri'
 
 module Forem
