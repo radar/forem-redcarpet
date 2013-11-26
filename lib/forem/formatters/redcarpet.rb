@@ -8,7 +8,7 @@ module Forem
       def self.format(text)
         options = [:hard_wrap, :filter_html, :autolink, :no_intraemphasis, :fenced_code, :gh_blockcode]
         renderer = ::Redcarpet::Markdown.new(::Redcarpet::Render::HTML, :fenced_code_blocks => true)
-        syntax_highlight(renderer.render(text)).html_safe
+        syntax_highlight(Forem::Sanitizer.sanitize(renderer.render(text))).html_safe
       end
 
       def self.blockquote(text)
@@ -23,6 +23,11 @@ module Forem
           code.replace Pygments.highlight(code.text.rstrip, :lexer => code[:class], :class => "forem_highlight")
         end
         doc.to_s
+      end
+
+      # This postpones the sanitization until *after* the rendered has rendered all the text.
+      def self.sanitize(text)
+        text
       end
     end
   end
