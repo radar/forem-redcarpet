@@ -14,7 +14,7 @@ module Forem
       def self.blockquote(text)
         text.split("\n").map do |line|
           "> " + line
-        end.join("\n")
+        end.join("\n") + "\n\n"
       end
 
       def self.syntax_highlight(html)
