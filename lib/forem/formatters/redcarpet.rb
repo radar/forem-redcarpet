@@ -18,7 +18,7 @@ module Forem
 
       def self.syntax_highlight(html)
         doc = Nokogiri::HTML::DocumentFragment.parse(html.to_s)
-        doc.css("pre code[@class]").each do |code|
+        doc.css("pre[@class]", "code[@class]").each do |code|
           code.replace CodeRay.scan(code.text.rstrip, code[:class].to_sym).div
         end
         doc.to_s
