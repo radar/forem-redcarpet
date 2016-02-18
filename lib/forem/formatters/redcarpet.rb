@@ -13,7 +13,11 @@ module Forem
 
       def self.blockquote(text)
         text.split("\n").map do |line|
-          "> " + line
+          if line[0] == ">"
+            ">" + line
+          else
+            "> " + line
+          end
         end.join("\n")
       end
 
