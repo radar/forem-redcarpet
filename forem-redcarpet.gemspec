@@ -3,17 +3,17 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "forem-redcarpet"
-  s.version     = "1.0.2"
+  s.version     = "1.0.3"
   s.authors     = ["Ryan Bigg"]
   s.email       = ["radarlistener@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/radar/forem-redcarpet"
   s.summary     = %q{Provides Redcarpet markup (with syntax highlighting by pygments.rb) for Forem posts}
-  s.description = %q{Provides Recarpet markup (with syntax highlighting by pygments.rb) for Forem posts}
+  s.description = %q{Provides Redcarpet markup (with syntax highlighting by pygments.rb) for Forem posts}
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_dependency 'nokogiri'
-  s.add_dependency 'redcarpet', '3.0.0'
-  s.add_dependency 'pygments.rb', '0.5.4'
+  s.add_runtime_dependency 'nokogiri', '~>1.6'
+  s.add_runtime_dependency 'redcarpet', '~>3.3'
+  s.add_runtime_dependency 'pygments.rb', '~>0.6'
 end
