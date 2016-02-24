@@ -25,7 +25,7 @@ module Forem
         doc = Nokogiri::HTML::DocumentFragment.parse(html.to_s)
         doc.css("pre code[@class]").each do |code|
           if Pygments::Lexer.find(code[:class])
-            code.replace Pygments.highlight(code.text.rstrip, :lexer => code[:class], :class => "forem_highlight")
+            code.parent.replace Pygments.highlight(code.text.rstrip, :lexer => code[:class], :class => "forem_highlight")
           end
         end
         doc.to_s
